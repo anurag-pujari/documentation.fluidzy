@@ -22,7 +22,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'fluidzy', // Usually your GitHub org/user name.
+  organizationName: 'anurag-pujari', // Usually your GitHub org/user name.
   projectName: 'documentation.fluidzy', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   onBrokenLinks: 'throw',
