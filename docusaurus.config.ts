@@ -77,9 +77,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Fluidzy',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Fluidzy logo',
         src: 'img/logo-fluidzy.png',
       },
       items: [
