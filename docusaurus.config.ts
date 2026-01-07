@@ -84,6 +84,7 @@ const config: Config = {
       logo: {
         alt: 'Fluidzy logo',
         src: 'img/logo-fluidzy.png',
+        href: 'https://fluidzy.com'
       },
       items: [
         {
