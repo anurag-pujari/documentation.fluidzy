@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkmy_website=globalThis.webpackChunkmy_website||[]).push([[1903],{1912(t){t.exports=JSON.parse('{"blogBasePath":"/documentation.fluidzy/blog","blogTitle":"Blog","authorsListPath":"/documentation.fluidzy/blog/authors"}')}}]);
