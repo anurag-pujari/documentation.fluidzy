@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdocusaurus_template_openapi_docs=globalThis.webpackChunkdocusaurus_template_openapi_docs||[]).push([[67],{19187(s){s.exports=JSON.parse('{"tags":[{"label":"test","permalink":"/docs/tags/test","count":6}]}')}}]);
