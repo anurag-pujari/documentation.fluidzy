@@ -1,0 +1,59 @@
+openapi: 3.1.0
+info:
+  title: DocuPipe API
+  description: API for submitting and managing document processing workflows.
+  version: 1.0.0
+
+servers:
+  - url: https://api.fluidzy.com/v1
+    description: Production server
+
+paths:
+  /document:
+    post:
+      operationId: post-document
+      summary: Submit a Document for Processing
+      description: Upload a file or provide a URL to initiate the DocuPipe processing workflow.
+      tags:
+        - Documents
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The document file to be processed.
+                url:
+                  type: string
+                  format: uri
+                  description: A public URL of the document to be processed.
+                workflowId:
+                  type: string
+                  description: Optional ID to trigger a specific processing workflow.
+      responses:
+        '202':
+          description: Document accepted for processing.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  documentId:
+                    type: string
+                    example: "doc_12345abc"
+                  status:
+                    type: string
+                    example: "queued"
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

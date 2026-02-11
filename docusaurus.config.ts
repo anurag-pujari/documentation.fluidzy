@@ -2,79 +2,78 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: 'Fluidzy documentation',
   tagline: 'Ship docs faster',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
   url: 'https://anurag-pujari.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'anurag-pujari', // Usually your GitHub org/user name.
-  projectName: 'documentation.fluidzy', // Usually your repo name.
+  organizationName: 'anurag-pujari',
+  projectName: 'documentation.fluidzy',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
 
-  presets: [
-    [
-      'classic',
-      {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        
-        /*blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
-        */
+presets: [
+  [
+    'classic',
+    {
+      docs: {
+        sidebarPath: './sidebars.ts',
+        // THIS LINE IS THE KEY:
+        docItemComponent: "@theme/ApiItem", 
+      },
+      theme: {
+        customCss: './src/css/custom.css',
+      },
+    } satisfies Preset.Options,
+  ],
+],
+  themes: [
+    'docusaurus-theme-openapi-docs', // This MUST be here to provide the Redux context
+  ],
 
-        theme: {
-          customCss: './src/css/custom.css',
-        },
-      } satisfies Preset.Options,
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "api",
+        docsPluginId: "classic",
+        config: {
+          docupipe: {
+            specPath: "examples/docupipe-api.yaml",
+            outputDir: "docs/api",
+            sidebarOptions: { 
+              groupPathsBy: "tag", 
+              categoryLinkSource: "tag",
+              sidebarCollapsed: false,
+            },
+          },
+          get_doc_detailed: {
+            specPath: "examples/samples/get-document-detailed.yaml",
+            outputDir: "docs/samples/get-document-detailed",
+            sidebarOptions: { 
+              groupPathsBy: "tag", 
+            },
+          }
+        }
+      }
     ],
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       respectPrefersColorScheme: true,
@@ -93,7 +92,6 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },
-
         {
           href: 'https://github.com/anurag-pujari/documentation.fluidzy',
           label: 'GitHub',
@@ -113,27 +111,10 @@ const config: Config = {
             },
           ],
         },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Fluidzy Project, Inc. Built with Docusaurus.`,
     },
+    
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

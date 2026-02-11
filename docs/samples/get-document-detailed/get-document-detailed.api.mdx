@@ -1,0 +1,72 @@
+---
+id: get-document-detailed
+title: "Retrieve Detailed Processing Result"
+description: "Access the analysis results of your submitted document."
+sidebar_label: "Retrieve Detailed Processing Result"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVU2P2zYQ/SvEnFpAsb3J9qLbFkmL5LTYbNGD18hS4shiliK15NCxK+i/F0N9rNd20CDX+mJ9jGbezLz32IFr0UvSzn5UkMMW6Y1yZWzQ0huFJLVBBRkoDKXXLcdBDjdliSEIqlFIK80h6CA8hmgoCFeJg4tehFg0mgiVmPItxIO9r1E8BpIUw6OoNBoltFW6lIRDvtY7zq3tVgSSW8yEtCq9eRwqTJ+13u20wiAeLO7Jy5JLtUZqKwj3JKRxdiu+aarF1ksbjfRC28r5JnUrjH5CUbhoFdcq3B6DqJwXCglLjlg8WMiglV42SOgD5OsOrGwQcpha+qJ5OJpn0kqqIQOPz1F7VJCTj3g6OG4/Wv0cUWiFlnSl0fPIuMF5TpBBKGtsJOQd0KHlioG8tlvIAPeyac0I4svV23fXv8mihL7fZBCwjF7TIUEtUHr0N5FqyNcbfu0xtM4GDJz37WrFf6/xfY5ps1U0wiN5jTtpGN7EhBmjUJIkZFA6S2iJM8m2NbxI7ezya+B03XkbrviKJfFcPROP9ABmSsscPG25z2AgzMVp2NhAvoYX2iRQPCFKxK0GBm/61H409N9gmD6Xap2vsorGiEvsWzBq3u+cc8glvZcHZgxhE34WSZ+NDy68mAj9u9v/QFkbmwI99Ee/DK5X1+fEeD/t3ToSFRcBjm2Qajf6RhILkw2W0zqX3ZFQ+uWRnwT0u0lT0RvIoSZqQ75cylYvKhO1+uewKF2z3F2djf7WOxWTRsWQB47J/5k5N8zvWAJz01xoUhjfD0GQjRd/JIeAHD79fZ96ZNNIn2tKsuNR3OoWxftJFHezVG5uP37PLGcTOnXMTGhbmphsKDnXSChuj73vtUexOfDkhtxXi9VixXtvXaBGJs2NFjWCOoJ5+2Ktd4MUTqB2L3L+P1n8yAtOuUzZeaCJlN3I6PVsUJBB/tr8Z1JvMqhdII7uukIG/MubvufHzxE9e/Img530WhbMo3UHSge+VpBX0oTTw+J4G7/cjcfKr+KHj5CLbU2GYNkOdtJEvoMMnvBwcqz1bJk1SoU+gR0imBYtHX175vosxdkW/vxwDxnI1wI8EVzKfhFX1w0R9+4Jbd/PMInvGWDf/wv4sxbF
+sidebar_class_name: "get api-method"
+info_path: docs/samples/get-document-detailed/docupipe-detailed-retrieval-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Retrieve Detailed Processing Result"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/document/{document_id}/detailed"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Access the analysis results of your submitted document. 
+The `status` field indicates the processing stage, and the `result` field provides 
+extracted plain text along with granular information like bounding boxes for detection.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-document-detailed.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-document-detailed.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-document-detailed.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

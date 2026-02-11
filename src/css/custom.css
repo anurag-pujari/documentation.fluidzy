@@ -6,6 +6,9 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --openapi-required: #fa383e;
+  --openapi-get-color: #00ff00; /* This is your Green Dot */
+  --openapi-post-color: #0000ff; /* This is your Blue Dot */
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
