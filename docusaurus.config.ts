@@ -41,9 +41,7 @@ presets: [
     } satisfies Preset.Options,
   ],
 ],
-  themes: [
-    'docusaurus-theme-openapi-docs', // This MUST be here to provide the Redux context
-  ],
+
 
   plugins: [
     [
@@ -58,7 +56,6 @@ presets: [
             sidebarOptions: { 
               groupPathsBy: "tag", 
               categoryLinkSource: "tag",
-              sidebarCollapsed: false,
             },
           },
           get_doc_detailed: {
@@ -66,13 +63,16 @@ presets: [
             outputDir: "docs/samples/get-document-detailed",
             sidebarOptions: { 
               groupPathsBy: "tag", 
+              categoryLinkSource: "tag",
             },
           }
         }
       }
     ],
   ],
-
+  themes: [
+    'docusaurus-theme-openapi-docs', // This MUST be here to provide the Redux context
+  ],
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
