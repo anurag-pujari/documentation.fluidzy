@@ -43,6 +43,7 @@ presets: [
 ],
 
 
+
   plugins: [
     [
       'docusaurus-plugin-openapi-docs',
@@ -78,6 +79,20 @@ presets: [
     colorMode: {
       respectPrefersColorScheme: true,
     },
+          prism: {
+        additionalLanguages: [
+          "ruby",
+          "csharp",
+          "php",
+          "java",
+          "powershell",
+          "json",
+          "bash",
+          "dart",
+          "objectivec",
+          "r",
+        ],
+      },
     navbar: {
       title: 'Fluidzy',
       logo: {
@@ -115,10 +130,7 @@ presets: [
       copyright: `Copyright © ${new Date().getFullYear()} Fluidzy Project, Inc. Built with Docusaurus.`,
     },
     
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
+
   } satisfies Preset.ThemeConfig,
 };
 
